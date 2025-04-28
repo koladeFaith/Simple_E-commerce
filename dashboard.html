@@ -16,7 +16,39 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body class="">
-  
-    <script src="script.js"></script>
+    <div
+      class="container-fluid mx-auto col-lg-6 col-10 rounded-3 mt-lg-5 mt-3 shadow p-lg-4 p-2">
+      <h1
+        class="text-decoration-underline text-warning text-center my-3 mb-lg-4">
+        E-commerce
+      </h1>
+      <p
+        id="err"
+        style="display: none"
+        class="text-center alert alert-danger p-2">
+        Fill in something, please
+      </p>
+      <input
+        type="text"
+        placeholder="Enter your text"
+        id="note"
+        autofocus
+        class="form-control shadow-none my-2 my-lg-3 border border-2 border-warning text-warning" />
+      <button class="btn btn-warning my-4 w-100" onclick="addItem()">
+        Add
+      </button>
+      <div id="show" class="my-3 border-dark rounded-2 bg-secondary p-4 fs-5 text-white text-center" >No items yet</div>
+    </div>
+    <div
+      
+      class="mt-5  container-fluid mx-auto col-lg-10 col-10 justify-content-between gap-4 d-flex">
+      <button id="listItem" style="display: none;" class="btn w-100 btn-dark">Delete first item</button>
+      <button id="listItem2" style="display: none;" class="btn w-100 py-3 btn-info">Delete last item</button>
+      <button id="listItem3" style="display: none;" class="btn w-100 py-3 btn-primary">Delete any item(s)</button>
+      <button id="listItem4" style="display: none;" class="btn w-100 btn-secondary">Edit item</button>
+      <button id="listItem5" style="display: none;" class="btn w-100 btn-success">Add item to the start</button>
+      <button id="listItem6" style="display: none;" class="btn w-100 btn-danger">Delete all item</button>
+    </div>
+    <script src="dashboard.js"></script>
   </body>
 </html>

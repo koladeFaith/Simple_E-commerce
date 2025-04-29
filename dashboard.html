@@ -37,17 +37,45 @@
       <button class="btn btn-warning my-4 w-100" onclick="addItem()">
         Add
       </button>
-      <div id="show" class="my-3 border-dark rounded-2 bg-secondary p-4 fs-5 text-white text-center" >No items yet</div>
+      <div
+        id="show"
+        class="my-3 border-secondary-subtle border rounded-2 bg-secondary-subtle p-4 fs-2 fw-semibold text-secondary text-center">
+        No items yet
+      </div>
     </div>
+    <!-- DOWNWARD BUTTON -->
     <div
-      
-      class="mt-5  container-fluid mx-auto col-lg-10 col-10 justify-content-between gap-4 d-flex">
-      <button id="listItem" style="display: none;" class="btn w-100 btn-dark">Delete first item</button>
-      <button id="listItem2" style="display: none;" class="btn w-100 py-3 btn-info">Delete last item</button>
-      <button id="listItem3" style="display: none;" class="btn w-100 py-3 btn-primary">Delete any item(s)</button>
-      <button id="listItem4" style="display: none;" class="btn w-100 btn-secondary">Edit item</button>
-      <button id="listItem5" style="display: none;" class="btn w-100 btn-success">Add item to the start</button>
-      <button id="listItem6" style="display: none;" class="btn w-100 btn-danger">Delete all item</button>
+      class="mt-5 container-fluid mx-auto col-lg-10 col-10 justify-content-between  gap-4 d-flex">
+      <button onclick="deleteFirstI`tem()" id="listItem" style="display: none" class="btn w-100 btn-dark">
+        Delete first item
+      </button>
+      <button
+        id="listItem2"
+        style="display: none"
+        class="btn w-100 py-3 btn-info">
+        Delete last item
+      </button>
+      <button
+        id="listItem3"
+        style="display: none"
+        class="btn w-100 py-3 btn-primary">
+        Delete any item(s)
+      </button>
+      <button
+        id="listItem4"
+        style="display: none"
+        class="btn w-100 btn-secondary">
+        Edit item
+      </button>
+      <button
+        id="listItem5"
+        style="display: none"
+        class="btn w-100 btn-success">
+        Add item to the start
+      </button>
+      <button onclick="deleteAllItem()" id="listItem6" style="display: none" class="btn w-100 btn-danger">
+        Delete all item
+      </button>
     </div>
     <script src="dashboard.js"></script>
   </body>

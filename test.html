@@ -1,0 +1,79 @@
+<html lang="en"><plasmo-csui id="plasmo-inspector"></plasmo-csui><head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>sample e-commerce</title>
+	<link rel="stylesheet" href="bootstrap.css">
+	<style></style></head>
+	<body class="" style="">
+		<div class="container-fluid col-lg-8 col-10 shadow-sm mt-lg-5 mt-4 py-2">
+			<h1 class="text-center text-danger text-decoration-underline my-3">
+				E-Commerce
+			</h1>
+			<div class="form-floating my-3">
+				<input type="text" placeholder="Enter your item" id="items" class="form-control">
+				<label for="items">Enter your item</label>
+			</div>
+			<div class="form-floating my-3">
+				<button onclick="addItem()" class="btn btn-danger w-100">
+					Add item
+				</button>
+			</div>
+            <div class="my-3 text-center py-1">
+				<div class="alert alert-danger py-2" style="display: none;" id="show">Please enter an item to add</div>
+			</div>
+		</div>
+
+        <div class="container-fluid my-3 col-lg-8 col-10 shadow-sm py-2">
+            <h2 id="showMyCart" class="text-center alert alert-dismissible alert-secondary" style="display: none;"></h2>
+            <table class="table table-bordered table-striped text-center" id="myTable" style="display: table;">
+            <tbody><tr>
+                <td class="col-1">S/N</td>
+                <td class="col-6">Products</td>
+            </tr>
+        </tbody>
+            <tbody><tr>
+                <td>1</td>
+                <td>laa</td>
+            </tr>
+            </tbody></table>
+        </div>
+        <div class="container" id="allButtons" style="display: block;">
+            <div class="row">
+                <button class="btn btn-dark col-lg-1 col-5 my-1 mx-auto" onclick="deleteFirst()">Delete first item</button>
+                <button class="btn btn-success col-lg-1 col-5 my-1 mx-auto" onclick="deleteLast()">Delete last item</button>
+                <button class="btn btn-warning col-lg-1 col-5 my-1 mx-auto" onclick="deleteAny()">Delete any item(s)</button>
+                <button class="btn btn-info col-lg-1 col-5 my-1 mx-auto" data-bs-toggle="modal" data-bs-target="#exampleModal">Edit item</button>
+                <button class="btn btn-primary col-lg-1 col-5 my-1 mx-auto" onclick="addStart()">Add item to the start</button>
+                <button class="btn btn-secondary col-lg-1 col-5 my-1 mx-auto" onclick="deleteAll()">Delete all items</button>
+            </div>
+        </div>
+
+		<!-- Modal -->
+		<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" style="display: none;">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h1 class="modal-title fs-5" id="exampleModalLabel">Modify cart</h1>
+						<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+					</div>
+					<div class="modal-body">
+                        <input type="number" class="form-control my-2" placeholder="Enter which index you will like to delete from" id="editedNewIndex">
+                        <input type="text" class="form-control my-2" placeholder="Enter the new value" id="editedNewValue">
+                        <div class="alert alert-success py-2 text-center" style="display: none;" id="alert">sucessful!</div>
+                    </div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+							Close
+						</button>
+						<button type="button" class="btn btn-primary" onclick="editItem()">Save changes</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	
+</body>
+	<script defer="" src="test.js"></script>
+		<script defer="" src="bootstrap.js"></script>
+		
+</html>

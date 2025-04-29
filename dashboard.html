@@ -37,30 +37,44 @@
       <button class="btn btn-warning my-4 w-100" onclick="addItem()">
         Add
       </button>
-      <div
-        id="show"
-        class="my-3 border-secondary-subtle border rounded-2 bg-secondary-subtle p-4 fs-2 fw-semibold text-secondary text-center">
-        No items yet
+      <div>
+        <table
+          id="show"
+          class="table-bordered my-3 border-secondary-subtle border rounded-2 bg-secondary-subtle p-4 fs-4 fw-semibold text-secondary gap-3 text-center w-100">
+          <!-- <tr></tr> -->
+
+          <center
+            id="hide"
+            class="my-3 border-secondary-subtle border rounded-2 bg-secondary-subtle p-4 fs-4 fw-semibold text-secondary gap-3 text-center w-100">
+            No items yet
+          </center>
+        </table>
       </div>
     </div>
     <!-- DOWNWARD BUTTON -->
     <div
-      class="mt-5 container-fluid mx-auto col-lg-10 col-10 justify-content-between  gap-4 d-flex">
-      <button onclick="deleteFirstI`tem()" id="listItem" style="display: none" class="btn w-100 btn-dark">
+      class="mt-5 container-fluid mx-auto col-lg-10 col-10justify-content-between gap-4 d-flex"
+      id="btns">
+      <button
+        onclick="deleteFirstItem()"
+        id="listItem"
+        style="display: none"
+        class="btn w-100 btn-dark">
         Delete first item
       </button>
       <button
+        onclick="deleteLastItem()"
         id="listItem2"
         style="display: none"
         class="btn w-100 py-3 btn-info">
         Delete last item
       </button>
-      <button
+      <buttons
         id="listItem3"
         style="display: none"
         class="btn w-100 py-3 btn-primary">
         Delete any item(s)
-      </button>
+      </buttons>
       <button
         id="listItem4"
         style="display: none"
@@ -68,15 +82,22 @@
         Edit item
       </button>
       <button
+        onclick="itemToStart()"
         id="listItem5"
         style="display: none"
         class="btn w-100 btn-success">
         Add item to the start
       </button>
-      <button onclick="deleteAllItem()" id="listItem6" style="display: none" class="btn w-100 btn-danger">
+      <button
+        onclick="deleteAllItem()"
+        id="listItem6"
+        style="display: none"
+        class="btn w-100 btn-danger">
         Delete all item
       </button>
     </div>
-    <script src="dashboard.js"></script>
+
+    <table></table>
   </body>
+  <script src="dashboard.js"></script>
 </html>

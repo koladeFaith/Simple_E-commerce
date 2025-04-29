@@ -17,30 +17,30 @@ const addItem = () => {
   }
 };
 // DELETE FIRST ITEM
-// const deleteFirstItem = () => {
-//   const deleteMsg = confirm("Are you sure you want to delete the first items");
-//   if (deleteMsg == true) {
-//     cart.shift();
-//     displayItem();
-//     if (cart.length >= 0) {
-//       listItem.style.display = "block";
-//       listItem2.style.display = "block";
-//       listItem3.style.display = "block";
-//       listItem4.style.display = "block";
-//       listItem5.style.display = "block";
-//       listItem6.style.display = "block";
-//     } else {
-//       listItem.style.display = "none";
-//       listItem2.style.display = "none";
-//       listItem3.style.display = "none";
-//       listItem4.style.display = "none";
-//       listItem5.style.display = "none";
-//       listItem6.style.display = "none";
-//     }
-//   } else {
-//     displayItem();
-//   }
-// };
+const deleteFirstItem = () => {
+  const deleteMsg = confirm("Are you sure you want to delete the first items");
+  if (deleteMsg == true) {
+    cart.shift();
+    displayItem();
+    if (cart.length >= 0) {
+      listItem.style.display = "block";
+      listItem2.style.display = "block";
+      listItem3.style.display = "block";
+      listItem4.style.display = "block";
+      listItem5.style.display = "block";
+      listItem6.style.display = "block";
+    } else {
+      listItem.style.display = "none";
+      listItem2.style.display = "none";
+      listItem3.style.display = "none";
+      listItem4.style.display = "none";
+      listItem5.style.display = "none";
+      listItem6.style.display = "none";
+    }
+  } else {
+    displayItem();
+  }
+};
 
 // DELETE ALL ITEM
 const deleteAllItem = (index) => {

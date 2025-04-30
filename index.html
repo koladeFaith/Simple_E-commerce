@@ -16,12 +16,43 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body class="">
-    <div
-      class="container-fluid mx-auto col-lg-6 col-10 rounded-3 mt-lg-5 mt-3 shadow p-lg-4 p-2">
     
-      <h1 class="text-decoration-underline  text-center my-3 mb-lg-4">E-commerce</h1>
-      <h2 class="text-decoration-underline text-center text-secondary my-3 mb-lg-4">SignUp</h2>
-      <p class="text-center ">Have an account already, click <a href="signin.html" class="text-decoration-none">here</a></p>
+     <div
+      class="container-fluid mx-auto col-lg-6 col-10 rounded-3 mt-lg-5 mt-3 shadow p-lg-4 p-2">
+      <h1
+        class="text-decoration-underline text-center text-warning my-3 mb-lg-4">
+        SignUp
+      </h1>
+
+      <form>
+            <div class="mb-3">
+          <label for="exampleInputPassword1" class="form-label text-dark-emphasis fs-5">Full name</label>
+          <input
+            type="text"
+            class="form-control shadow-none my-2 my-lg-3 border border-2 border-warning-subtle text-dark"
+            id="exampleInputPassword1" />
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label text-dark-emphasis fs-5"
+            >Email address</label
+          >
+          <input
+            type="email"
+            class="form-control shadow-none my-2 my-lg-3 border border-2 border-warning-subtle text-dark"
+            id="exampleInputEmail1"
+            aria-describedby="emailHelp" />
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputPassword1" class="form-label text-dark-emphasis fs-5">Password</label>
+          <input
+            type="password"
+            class="form-control shadow-none my-2 my-lg-3 border border-2 border-warning-subtle text-dark"
+            id="exampleInputPassword1" />
+        </div>
+
+        <button type="submit" class="btn btn-warning w-100 my-4 fs-5">Submit</button>
+      </form>
+      <p class="text-dark-emphasis fs-6">Already have an account? <a href="signin.html" class="text-primary">Sign in</a></p>
     </div>
   </body>
   <script src="script.js"></script>

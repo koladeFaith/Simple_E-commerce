@@ -18,8 +18,33 @@
   <body>
     <div
       class="container-fluid mx-auto col-lg-6 col-10 rounded-3 mt-lg-5 mt-3 shadow p-lg-4 p-2">
-      <h1 class="text-decoration-underline text-center my-3 mb-lg-4">SignIn</h1>
-      <p>Does not have an account, click <a href="index.html">here</a></p>
+      <h1
+        class="text-decoration-underline text-center text-warning my-3 mb-lg-4">
+        SignIn
+      </h1>
+
+      <form>
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label"
+            >Email address</label
+          >
+          <input
+            type="email"
+            class="form-control shadow-none my-2 my-lg-3 border border-2 border-warning text-warning"
+            id="exampleInputEmail1"
+            aria-describedby="emailHelp" />
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputPassword1" class="form-label">Password</label>
+          <input
+            type="password"
+            class="form-control shadow-none my-2 my-lg-3 border border-2 border-warning text-warning"
+            id="exampleInputPassword1" />
+        </div>
+
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+      <p>Doesn't have an account? <a href="index.html">Sign up</a></p>
     </div>
   </body>
   <script src="signin.js"></script>

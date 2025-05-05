@@ -53,9 +53,9 @@
 //     console.log(userData);
 //   }
 // };
-const toast = () => {
+const toast = (text, background, color) => {
   Toastify({
-    text: "Hello",
+    text: text,
     duration: 3000,
     newWindow: true,
     close: true,
@@ -63,15 +63,20 @@ const toast = () => {
     position: "right", // `left`, `center` or `right`
     stopOnFocus: true, // Prevents dismissing of toast on hover
     style: {
-      background: "red",
-      color: "white",
+      background: background,
+      color: color,
     },
     onClick: function () {}, // Callback after click
   }).showToast();
 };
 
-const userData = [];
-
+let userData = [];
+if (localStorage.user) {
+  let retrieved = JSON.parse(localStorage.getItem("user"));
+  userData = retrieved;
+} else {
+  userData = [];
+}
 const signUp = () => {
   if (
     first.value === "" ||
@@ -79,11 +84,13 @@ const signUp = () => {
     email.value === "" ||
     password.value === ""
   ) {
-    toast("Haba now, fill in the inputs joor😠👿", "#f00", "#fff");
-    // sub.innerHTML = "...loading";
-    // setTimeout(() => {
-    //   sub.innerHTML = "Submit";
-    // }, 1000);
+    toast("Haba now, fill in the inputs joor😠👿", "red", "#fff");
+    sub.innerHTML = "...loading";
+    setTimeout(() => {
+      window.location.href = "signin.html";
+
+      sub.innerHTML = "Submit";
+    }, 2000);
   } else {
     const fName = document.getElementById("first").value;
     const lName = document.getElementById("last").value;
@@ -99,6 +106,10 @@ const signUp = () => {
     document.getElementById("last").value = "";
     document.getElementById("email").value = "";
     document.getElementById("password").value = "";
+    localStorage.setItem("user", JSON.stringify(userData));
+    setTimeout(() => {
+      window.location.href = "signin.html";
+    }, 2000);
   }
 };
-console.log("Faith");
+// console.log("Faith");

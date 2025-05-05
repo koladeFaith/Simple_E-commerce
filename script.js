@@ -3,56 +3,6 @@
 // uiverse
 // const allUsers = [];
 
-// const signUp = () => {
-//   window.location.href = "signin.html";
-// };
-// TOASTIFY
-// const toast = (text, background, color) => {
-//   Toastify({
-//     text,
-//     duration: 3000,
-//     newWindow: true,
-//     close: true,
-//     gravity: "top", // `top` or `bottom`
-//     position: "center", // `left`, `center` or `right`
-//     stopOnFocus: true, // Prevents dismissing of toast on hover
-//     style: {
-//       background,
-//       color,
-//     },
-//     onClick: function () {}, // Callback after click
-//   }).showToast();
-// };
-
-// const userData = [];
-
-// const signUp = () => {
-//   if (
-//     first.value === "" ||
-//     last.value === "" ||
-//     email.value === "" ||
-//       password.value === ""
-
-//   ) {
-//     toast("Fill the input, please", "red", "white");
-//   } else {
-//     const firstName = document.getElementById("first").value;
-//     const lastName = document.getElementById("last").value;
-//     const mail = document.getElementById("email").value;
-//       const pass = document.getElementById("password").value;
-//       console.log(firstName, lastName, mail, pass);
-
-//     const dataObj = {
-//       firstName,
-//       lastName,
-//       mail,
-//       pass,
-//     };
-//     userData.push(dataObj);
-//     toast("Sign in sucessfully", "green", "black");
-//     console.log(userData);
-//   }
-// };
 const toast = (text, background, color) => {
   Toastify({
     text: text,
@@ -87,10 +37,8 @@ const signUp = () => {
     toast("Haba now, fill in the inputs joor😠👿", "red", "#fff");
     sub.innerHTML = "...loading";
     setTimeout(() => {
-      window.location.href = "signin.html";
-
       sub.innerHTML = "Submit";
-    }, 2000);
+    }, 1000);
   } else {
     const fName = document.getElementById("first").value;
     const lName = document.getElementById("last").value;

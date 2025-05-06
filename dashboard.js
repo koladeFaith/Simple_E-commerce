@@ -1,8 +1,22 @@
-let gotten = JSON.parse(localStorage.getItem("person")) || [];
-console.log(gotten);
-const gottenPerson = JSON.parse(localStorage.getItem(gotten[0]));
-console.log(gottenPerson);
+const checkPerson = () => {
+  if (localStorage.person) {
+    const gotten = JSON.parse(localStorage.getItem("person"));
+    console.log(gotten);
+    showPerson.innerHTML = `<h4 class="text-center">Welcome ${gotten.fName} ${gotten.lName} 😍</h4>`
 
+  } else {
+
+    body.innerHTML = `<h4 class="text-center">You are not signed in, we are redirecting you to signin page</h4>`
+    setTimeout(() => {
+      window.location.href = "signin.html";
+    }, 1500);
+  }
+}
+checkPerson()
+const signOut = () => {
+  localStorage.removeItem("person")
+  checkPerson()
+}
 const cart = [];
 // ADD ITEM
 const addItem = () => {
@@ -90,7 +104,6 @@ const deleteAllItem = (index) => {
 // DISPLAY ITEM
 const displayItem = () => {
   if (cart.length == 0) {
-    // alert(cart.length)
     hide.style.display = "block";
 
     show.innerHTML = "";
@@ -103,15 +116,15 @@ const displayItem = () => {
     listItem6.style.display = "none";
   } else {
     show.innerHTML = `
-<table border='5'> <tr><td>S/N</td><td>Products</td></tr></table>
-`;
+    <table table border = '5' > <tr><td>S/N</td><td>Products</td></tr> </table>
+      `;
     cart.map((item, index) => {
       show.innerHTML += `
-    
-        <tr>
+
+      <tr>
             <td>${index + 1}.</td>
             <td>${item}</td>
-        </tr>
+        </tr >
     `;
     });
   }

@@ -35,11 +35,14 @@ const signUp = () => {
     password.value === ""
   ) {
     toast("Haba now, fill in the inputs joor😠👿", "red", "#fff");
-    sub.innerHTML = "...loading";
+    // loader.style.display = "block";
+    sub.innerHTML = "...loading"
     setTimeout(() => {
       sub.innerHTML = "Submit";
     }, 1000);
   } else {
+    sub.innerHTML = "...loading";
+
     const fName = document.getElementById("first").value;
     const lName = document.getElementById("last").value;
     const mail = document.getElementById("email").value;

@@ -1,3 +1,8 @@
+let gotten = JSON.parse(localStorage.getItem("person")) || [];
+console.log(gotten);
+const gottenPerson = JSON.parse(localStorage.getItem(gotten[0]));
+console.log(gottenPerson);
+
 const cart = [];
 // ADD ITEM
 const addItem = () => {
@@ -111,4 +116,3 @@ const displayItem = () => {
     });
   }
 };
-

@@ -1,7 +1,8 @@
+let gottenUser = JSON.parse(localStorage.getItem("user")) || [];
 // TOASTIFY
-const toast = () => {
+const toast = (text, background, color) => {
   Toastify({
-    text: "Hello",
+    text: text,
     duration: 3000,
     newWindow: true,
     close: true,
@@ -9,19 +10,43 @@ const toast = () => {
     position: "right", // `left`, `center` or `right`
     stopOnFocus: true, // Prevents dismissing of toast on hover
     style: {
-      background: "red",
-      color: "white",
+      background: background,
+      color: color,
     },
     onClick: function () {}, // Callback after click
   }).showToast();
 };
-const found = localStorage.getItem("user")
+
 const signIn = () => {
   if (email.value === "" || password.value === "") {
     toast("Haba now, fill in the inputs joor😠👿", "#f00", "#fff");
+    sub.innerHTML = "...loading";
+    setTimeout(() => {
+      sub.innerHTML = "Submit";
+    }, 1000);
   } else {
-    alert(found[2])
-  }
+    sub.innerHTML = "...loading";
+    const mail = document.getElementById("email").value;
+    const pass = document.getElementById("password").value;
 
-  window.location.href = "dashboard.html";
+    const signInObj = { mail, pass };
+    console.log(signInObj);
+
+    let found = gottenUser.find((user) => user.mail == mail);
+    localStorage.setItem("person", JSON.stringify(found));
+    console.log(found);
+
+
+    if (found === undefined) {
+      toast("User not found", "#f01400", "#fff");
+      sub.innerHTML = "Submit";
+    } else {
+      toast("Sign in successful😁", "#006400", "#fff");
+      setTimeout(() => {
+        window.location.href = "dashboard.html";
+      }, 2000);
+    }
+    document.getElementById("email").value = "";
+    document.getElementById("password").value = "";
+  }
 };

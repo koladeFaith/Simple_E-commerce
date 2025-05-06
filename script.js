@@ -16,7 +16,7 @@ const toast = (text, background, color) => {
       background: background,
       color: color,
     },
-    onClick: function () {}, // Callback after click
+    onClick: function () { }, // Callback after click
   }).showToast();
 };
 
@@ -36,7 +36,7 @@ const signUp = () => {
   ) {
     toast("Haba now, fill in the inputs joor😠👿", "red", "#fff");
     // loader.style.display = "block";
-    sub.innerHTML = "...loading"
+    sub.innerHTML = "...loading";
     setTimeout(() => {
       sub.innerHTML = "Submit";
     }, 1000);
@@ -49,18 +49,28 @@ const signUp = () => {
     const pass = document.getElementById("password").value;
 
     const userObj = { fName, lName, mail, pass };
-    userData.push(userObj);
-    toast("Sign up successful😁", "#006400", "#fff");
-    console.log(userData);
+    let found = userData.find((eachUser) => eachUser.mail == mail);
+    if (found == undefined) {
+      userData.push(userObj);
+      toast("Sign up successful😁", "#006400", "#fff");
 
-    document.getElementById("first").value = "";
-    document.getElementById("last").value = "";
-    document.getElementById("email").value = "";
-    document.getElementById("password").value = "";
-    localStorage.setItem("user", JSON.stringify(userData));
-    setTimeout(() => {
-      window.location.href = "signin.html";
-    }, 2000);
+      console.log(userData);
+
+      localStorage.setItem("user", JSON.stringify(userData));
+      setTimeout(() => {
+        window.location.href = "signin.html";
+      }, 2000);
+    } else {
+      toast("Account already exists", "#00f", "#fff");
+      setTimeout(() => {
+        sub.innerHTML = "Submit";
+      }, 1000);
+      document.getElementById("first").value = "";
+      document.getElementById("last").value = "";
+      document.getElementById("email").value = "";
+      document.getElementById("password").value = "";
+    }
+    console.log(found);
   }
 };
 // console.log("Faith");

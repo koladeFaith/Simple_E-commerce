@@ -32,10 +32,11 @@ const signIn = () => {
     const signInObj = { mail, pass };
     console.log(signInObj);
 
-    let found = gottenUser.find((user) => user.mail == mail);
+    let found = gottenUser.find(
+      (user) => user.mail == mail && user.pass == pass
+    );
     localStorage.setItem("person", JSON.stringify(found));
     console.log(found);
-
 
     if (found === undefined) {
       toast("User not found", "#f01400", "#fff");

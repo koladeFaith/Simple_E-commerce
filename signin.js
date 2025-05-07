@@ -51,3 +51,8 @@ const signIn = () => {
     document.getElementById("password").value = "";
   }
 };
+document.addEventListener("keydown", (event) => {
+  if (event.key === "Enter") {
+    signIn()
+  }
+})

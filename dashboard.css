@@ -1,0 +1,30 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+ body,
+html {
+  height: 100%;
+  margin: 0;
+
+}
+
+.gradient-warning-bg {
+  height: 100vh;
+  background: linear-gradient(-45deg, #f9ff, #faaa, #faaa, #f9ff);
+  background-size: 400% 400%;
+  animation: gradientMove 10s ease infinite;
+}
+
+@keyframes gradientMove {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}

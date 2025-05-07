@@ -74,3 +74,8 @@ const signUp = () => {
   }
 };
 // console.log("Faith");
+document.addEventListener("keydown", (event) => {
+  if (event.key === "Enter") {
+    signUp()
+  }
+})

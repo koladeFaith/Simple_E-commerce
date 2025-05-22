@@ -62,9 +62,10 @@ body {
 }
 
 .input-icon {
-  height: 1.3em;
   width: 1.3em;
   fill: white;
+  cursor: pointer;
+
 }
 
 .input-field {
@@ -74,12 +75,23 @@ body {
   width: 100%;
   color: #d3d3d3;
 }
+.input-icon-group {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.input-icon-group .input-field {
+  flex: 1;
+  margin-right: 10px; /* Adjust spacing as needed */
+}
+
 
 .form .btn {
   display: flex;
   justify-content: center;
   flex-direction: row;
-  margin-top: 2.5em;
+  margin-top: 2.3em;
 }
 
 .button1 {
@@ -133,6 +145,11 @@ body {
 .button3:hover {
   background-color: red;
   color: white;
+}
+.pass-verify{
+font-size: 15px;
+text-align: center;
+ 
 }
 /* From Uiverse.io by mrhyddenn */
 .spinner {

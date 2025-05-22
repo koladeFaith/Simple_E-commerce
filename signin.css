@@ -62,9 +62,10 @@ body {
 }
 
 .input-icon {
-  height: 1.3em;
   width: 1.3em;
   fill: white;
+  cursor: pointer;
+
 }
 
 .input-field {
@@ -74,7 +75,16 @@ body {
   width: 100%;
   color: #d3d3d3;
 }
+.input-icon-group {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
+.input-icon-group .input-field {
+  flex: 1;
+  margin-right: 10px; /* Adjust spacing as needed */
+}
 .form .btn {
   display: flex;
   justify-content: center;

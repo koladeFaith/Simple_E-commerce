@@ -27,6 +27,22 @@ if (localStorage.user) {
 } else {
   userData = [];
 }
+
+addEventListener('input', () => {
+  const passwordInput = document.getElementById('password');
+  const lengthCheck = document.getElementById('length');
+  const uppercaseCheck = document.getElementById('uppercase');
+  const lowercaseCheck = document.getElementById('lowercase');
+  const numberCheck = document.getElementById('number');
+  const specialCheck = document.getElementById('special');
+  const passwordVer = passwordInput.value;
+
+  lengthCheck.style.color = passwordVer.length >= 8 ? 'green' : 'red';
+  uppercaseCheck.style.color = /[A-Z]/.test(passwordVer) ? 'green' : 'red';
+  lowercaseCheck.style.color = /[a-z]/.test(passwordVer) ? 'green' : 'red';
+  numberCheck.style.color = /[0-9]/.test(passwordVer) ? 'green' : 'red';
+  specialCheck.style.color = /[!@#$%^&*(),.?":{}|<>]/.test(passwordVer) ? 'green' : 'red';
+});
 const signUp = () => {
   if (
     first.value === "" ||
@@ -77,5 +93,18 @@ const signUp = () => {
 document.addEventListener("keydown", (event) => {
   if (event.key === "Enter") {
     signUp()
+  }
+})
+
+const password = document.getElementById('password')
+const show = document.querySelector("#show")
+show.addEventListener("click", () => {
+  if (password.getAttribute("type") === "password") {
+    password.setAttribute("type", "text")
+    show.classList.replace("bi-eye", "bi-eye-slash")
+  } else {
+    password.setAttribute("type", "password")
+    show.classList.replace("bi-eye-slash", "bi-eye")
+
   }
 })
